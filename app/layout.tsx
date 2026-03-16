@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Public_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -19,7 +9,27 @@ const publicSans = Public_Sans({
 
 export const metadata: Metadata = {
   title: "PosadApp",
-  description: "PosadApp - A venezuelan inns app",
+  description: "PosadApp - A Venezuelan inns app",
+  keywords: ["PosadApp", "Venezuelan inns", "Inns app"],
+  authors: [
+    {
+      name: "PosadApp",
+      url: "https://posadapp.com",
+    },
+  ],
+  openGraph: {
+    title: "PosadApp",
+    description: "PosadApp - A Venezuelan inns app",
+    type: "website",
+    locale: "es-ES",
+    siteName: "PosadApp",
+  },
+  twitter: {
+    title: "PosadApp",
+    description: "PosadApp - A Venezuelan inns app",
+    card: "summary_large_image",
+    site: "@PosadApp",
+  },
 };
 
 export default function RootLayout({

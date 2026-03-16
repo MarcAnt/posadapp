@@ -1,12 +1,41 @@
-import { AuthForm } from "@/components/authform";
+import { Metadata } from "next";
+import { GalleryVerticalEnd } from "lucide-react";
+
+import { LoginForm } from "@/components/login-form";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "PosadApp - Inicia Sesión",
+  description: "Inicia sesión para gestionar tus reservas",
+};
+
+import loginImage from "@/public/login.webp";
 
 export default function LoginPage() {
   return (
-    <main className="flex justify-center flex-col items-center min-h-screen">
-      <h2 className="text-primary scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-        PosadApp
-      </h2>
-      <AuthForm mode="login" />
-    </main>
+    <div className="grid min-h-svh lg:grid-cols-2">
+      <div className="flex flex-col gap-4 p-6 md:p-10">
+        <div className="flex justify-center gap-2 md:justify-start">
+          <a href="#" className="flex items-center gap-2 font-medium">
+            <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
+              <GalleryVerticalEnd className="size-4" />
+            </div>
+            PosadApp
+          </a>
+        </div>
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full max-w-xs">
+            <LoginForm />
+          </div>
+        </div>
+      </div>
+      <div className="bg-muted relative hidden lg:block">
+        <Image
+          src={loginImage}
+          alt="Image"
+          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+        />
+      </div>
+    </div>
   );
 }
